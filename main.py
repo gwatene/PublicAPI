@@ -13,9 +13,9 @@ def home_page():
     return json_dump
 
 #enable user input filter item
-@app.route('/msisdn/', methods =['GET'])
+@app.route('/request/', methods =['GET'])
 def request_page():
-    usr_query = str(request.args.get('msisdn')) #/user/?user=query
+    usr_query = str(request.args.get('user')) #/user/?user=query
     data_set = {'page': 'Request', 'Message': 'Successfully got the request for {usr_query}', 'Time': time.time()}
     #convert data set to json
     json_dump = json.dumps(data_set)
